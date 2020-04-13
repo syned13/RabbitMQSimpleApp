@@ -19,13 +19,14 @@ func init() {
 
 func main() {
 	fmt.Println("Hello world")
+	fmt.Println("PORT:" + port)
 
 	router := mux.NewRouter()
 
 	router.HandleFunc("/", index).Methods(http.MethodGet)
 	router.HandleFunc("/message", sendMessage).Methods(http.MethodPost)
 
-	log.Fatal(http.ListenAndServe(port, router))
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
