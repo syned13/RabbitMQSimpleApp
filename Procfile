@@ -1,1 +1,2 @@
 web: RabbitMQSimpleApp
+worker: worker
